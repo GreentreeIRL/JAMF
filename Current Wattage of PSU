@@ -1,0 +1,7 @@
+#!/bin/bash
+#Extension attribute to detect wattage being supplied by PSU
+#Tony Stott 21/8/18
+
+Wattage=$(system_profiler SPPowerDataType | grep Wattage | awk -e 's/^[Wattage:\ ]*//')
+
+echo "<result>$Wattage</result>"
